@@ -1,4 +1,4 @@
-public class Debug {
+public class ExosDebug {
     public static void main(String[] args) {
         System.out.println("DEBUG");
 //        debugDeclareVariables();
@@ -21,12 +21,12 @@ public class Debug {
     }
 
     private static void debugDeclareVariables() {
-        ExosIntro.declareVariables();
+        ExosFunctions.declareVariables();
     }
 
     private static void debugCalculTVA() {
         System.out.println("DEBUG : Calcul TVA");
-        System.out.println("calculateTVA : " + ExosIntro.calculateTVA(100,20));
+        System.out.println("calculateTVA : " + ExosFunctions.calculateTVA(100,20));
     }
 
     private static void debugYearLeap() {
@@ -47,16 +47,16 @@ public class Debug {
 
         System.out.println("Début Analyse Année Bissextile : ");
         for (int y : years_leap) {
-            if (!ExosIntro.isLeapYear(y)) {
-                System.out.println("calculateLeap de " + y + " : " + ExosIntro.isLeapYear(y));
+            if (!ExosFunctions.isLeapYear(y)) {
+                System.out.println("calculateLeap de " + y + " : " + ExosFunctions.isLeapYear(y));
             }
         }
         System.out.println("Analyse Année Bissextile sur " + years_leap.length + " années !");
 
         System.out.println("Début Analyse Année non Bissextile : ");
         for (int y : years_no_leap) {
-            if (ExosIntro.isLeapYear(y)) {
-                System.out.println("calculateLeap de " + y + " : " + ExosIntro.isLeapYear(y));
+            if (ExosFunctions.isLeapYear(y)) {
+                System.out.println("calculateLeap de " + y + " : " + ExosFunctions.isLeapYear(y));
             }
         }
         System.out.println("Analyse Année non Bissextile sur " + years_no_leap.length + " années !");
@@ -68,8 +68,8 @@ public class Debug {
         int[] factorials = {1, 1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800};
 
         for (int i = 0; i != numbers.length; ++i) {
-            if (factorials[i] != ExosIntro.calculateFactorial(numbers[i])) {
-                System.out.println("La function calculateFactorial(" + numbers[i] + ") renvoie une mauvaise valeur : " +  ExosIntro.calculateFactorial(numbers[i]));
+            if (factorials[i] != ExosFunctions.calculateFactorial(numbers[i])) {
+                System.out.println("La function calculateFactorial(" + numbers[i] + ") renvoie une mauvaise valeur : " +  ExosFunctions.calculateFactorial(numbers[i]));
             }
         }
     }
@@ -80,10 +80,10 @@ public class Debug {
         String[] datas_result = {"erreur", "[]", "[-]", "[--]", "[----+]", "[----+-]", "[----+----+]", "[----+----+--]"};
 
         for (int i = 0; i != datas.length; ++i) {
-            if (!datas_result[i].equalsIgnoreCase(ExosIntro.showSlide(datas[i]))) {
-                System.out.println("Affichage KO de la règle de " + datas[i] + " graduations : " + ExosIntro.showSlide(datas[i]));
+            if (!datas_result[i].equalsIgnoreCase(ExosFunctions.showSlide(datas[i]))) {
+                System.out.println("Affichage KO de la règle de " + datas[i] + " graduations : " + ExosFunctions.showSlide(datas[i]));
             } else {
-                System.out.println("Affichage OK de la règle de " + datas[i] + " graduations : " + ExosIntro.showSlide(datas[i]));
+                System.out.println("Affichage OK de la règle de " + datas[i] + " graduations : " + ExosFunctions.showSlide(datas[i]));
             }
         }
     }
@@ -93,7 +93,7 @@ public class Debug {
         int[][] rectangle = {{1,1}, {2, 1}, {3,2}};
 
         for (int i = 0; i != rectangle.length; ++i) {
-            System.out.println(ExosIntro.showRectangle(rectangle[i][0],rectangle[i][1]));
+            System.out.println(ExosFunctions.showRectangle(rectangle[i][0],rectangle[i][1]));
         }
     }
 
@@ -102,7 +102,7 @@ public class Debug {
         String[] palindromes = {"anna", "radar", "rotor", "kayak", "été", "ici", "tôt", "rêver", "réifier", "ressasser"};
 
         for (int i = 0; i != palindromes.length; ++i) {
-            if (ExosIntro.isPalindrome(palindromes[i])) {
+            if (ExosFunctions.isPalindrome(palindromes[i])) {
                 System.out.println(palindromes[i] + " est un palidrome !");
             } else {
                 System.out.println(palindromes[i] + " n'est pas un palidrome !");
@@ -115,7 +115,7 @@ public class Debug {
         int[] nums = {-3, 0, 1, 2, 4, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
 
         for (int nb : nums) {
-            if (ExosIntro.isNumberFirst(nb)) {
+            if (ExosFunctions.isNumberFirst(nb)) {
                 System.out.println("Le nombre " + nb + " est un nombre premier !");
             } else {
                 System.out.println("Le nombre " + nb + " n'est pas un nombre premier !");
@@ -128,7 +128,7 @@ public class Debug {
         int[] listNums = {-3, 0, 1, 2, 4, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
 
         for (int nb : listNums) {
-            int[] numsFirst = ExosIntro.getListNumFirst(nb);
+            int[] numsFirst = ExosFunctions.getListNumFirst(nb);
             if (numsFirst.length > 0) {
                 System.out.println("Les nombres premiers inférieurs à " + nb + " sont : ");
 
@@ -153,7 +153,7 @@ public class Debug {
         int[] listMax = {21,1500};
 
         for (int i = 0; i != listNums.length; ++i) {
-            if (ExosIntro.getValueMaxOfArray(listNums[i]) == listMax[i]) {
+            if (ExosFunctions.getValueMaxOfArray(listNums[i]) == listMax[i]) {
                 System.out.println("Le maximum du tableau " + i + " est bien " + listMax[i]);
             } else {
                 System.out.println("Le maximum du tableau " + i + " n'est pas " + listMax[i] + " !");
@@ -168,10 +168,10 @@ public class Debug {
         int[] lengthMax = {9, 10, 10, 10};
 
         for (int i = 0; i != listString.length; ++i) {
-            if (ExosIntro.getValueMaxStringInArray(listString[i]) == lengthMax[i]) {
-                System.out.println("Taille du mot le plus long du tableau " + i + " : " + ExosIntro.getValueMaxStringInArray(listString[i]));
+            if (ExosFunctions.getValueMaxStringInArray(listString[i]) == lengthMax[i]) {
+                System.out.println("Taille du mot le plus long du tableau " + i + " : " + ExosFunctions.getValueMaxStringInArray(listString[i]));
             } else {
-                System.out.println("Problème sur la taille du mot le plus long du tableau " + i + " : " + ExosIntro.getValueMaxStringInArray(listString[i]));
+                System.out.println("Problème sur la taille du mot le plus long du tableau " + i + " : " + ExosFunctions.getValueMaxStringInArray(listString[i]));
             }
         }
     }
@@ -183,7 +183,7 @@ public class Debug {
         int[] listMax = {1500, 80};
 
         for (int i = 0; i != listNums.length; ++i) {
-            if (ExosIntro.getValueMaxOfArrayOfArray(listNums[i]) == listMax[i]) {
+            if (ExosFunctions.getValueMaxOfArrayOfArray(listNums[i]) == listMax[i]) {
                 System.out.println("Le maximum du tableau " + i + " est bien " + listMax[i]);
             } else {
                 System.out.println("Le maximum du tableau " + i + " n'est pas " + listMax[i] + " !");
@@ -198,10 +198,10 @@ public class Debug {
         int[] listMax = {10, 10};
 
         for (int i = 0; i != listString.length; ++i) {
-            if (ExosIntro.getValueMaxStringInArrayOfArray(listString[i]) == listMax[i]) {
-                System.out.println("Taille du mot le plus long du tableau " + i + " : " + ExosIntro.getValueMaxStringInArrayOfArray(listString[i]));
+            if (ExosFunctions.getValueMaxStringInArrayOfArray(listString[i]) == listMax[i]) {
+                System.out.println("Taille du mot le plus long du tableau " + i + " : " + ExosFunctions.getValueMaxStringInArrayOfArray(listString[i]));
             } else {
-                System.out.println("Problème sur la taille du mot le plus long du tableau " + i + " : " + ExosIntro.getValueMaxStringInArrayOfArray(listString[i]));
+                System.out.println("Problème sur la taille du mot le plus long du tableau " + i + " : " + ExosFunctions.getValueMaxStringInArrayOfArray(listString[i]));
             }
         }
     }
@@ -210,7 +210,7 @@ public class Debug {
         int[][] datas = {{3, 4}, {5, 6}, {10, 10}};
 
         for (int[] data : datas) {
-            int[][] matrix = ExosIntro.getArrayOfMultiplicationTable(data[0],data[1]);
+            int[][] matrix = ExosFunctions.getArrayOfMultiplicationTable(data[0],data[1]);
             System.out.println("Table de " + data[0] + " par " + data[1]);
             for (int i = 0; i != matrix.length; ++i) {
                 int[] ligne = matrix[i];
@@ -224,13 +224,13 @@ public class Debug {
     }
 
     private static void debugEmptyTable() {
-        System.out.println(ExosIntro.showTable(3,4, 2));
+        System.out.println(ExosFunctions.showTable(3,4, 2));
     }
 
     private static void debugMultiplicationTable() {
         int[][] datas = {{3, 4}, {5, 6}, {10, 10}};
         for (int[] data : datas) {
-            System.out.println(ExosIntro.showMultiplicationTable(data[0],data[1]));
+            System.out.println(ExosFunctions.showMultiplicationTable(data[0],data[1]));
         }
     }
 }

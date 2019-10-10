@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98bb18f4-7ee1-43aa-892e-06b30459e611" name="Default Changelist" comment="" />
+    <list default="true" id="98bb18f4-7ee1-43aa-892e-06b30459e611" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ExosShowing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Exos/Debug.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Exos/ExoScanner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Exos/ExosIntro.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ExosDebug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExoScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScannerExo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExosIntro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ExosFunctions.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +25,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1RvRia77DMVa6W5pvbmSbdQRGbA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
@@ -37,7 +52,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" editBeforeRun="true" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="ExosIntro" />
+      <option name="MAIN_CLASS_NAME" value="ExosShowing" />
       <module name="Exos" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -65,24 +80,31 @@
       <workItem from="1570604797518" duration="27222000" />
       <workItem from="1570646773766" duration="5208000" />
       <workItem from="1570697479470" duration="19467000" />
+      <workItem from="1570728598965" duration="3495000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ExosIntro.java</url>
-          <line>259</line>
+          <url>file://$PROJECT_DIR$/src/ExosFunctions.java</url>
+          <line>263</line>
           <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ExosIntro.java</url>
-          <line>322</line>
-          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

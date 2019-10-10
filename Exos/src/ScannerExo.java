@@ -8,7 +8,7 @@ import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class ExoScanner {
+public class ScannerExo {
     public static void main(String[] args) {
 //        showMenu();
         readFile("inputFile.txt");
