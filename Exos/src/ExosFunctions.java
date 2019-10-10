@@ -8,7 +8,11 @@ public class ExosIntro {
                 "[2] => Est-ce que l'année est bissextile ?",
                 "[3] => Calcul d'une factorielle",
                 "[4] => Afficher une règle",
-                "[5] => Afficher un rectangle"
+                "[5] => Afficher un rectangle",
+                "[6] => est-ce que c'est un palindrome ?",
+                "[7] => est-ce un nombre premier ?",
+                "[8] => afficher tous les nombres premiers inférieurs à",
+                "[9] => afficher la table de multiplication"
         };
 
         Scanner scInput = new Scanner(System.in);
@@ -336,6 +340,19 @@ public class ExosIntro {
             case 5:
                 getRectangle(scInput);
                 break;
+            case 6:
+                getPalindrome(scInput);
+                break;
+            case 7:
+                getNumberFirst(scInput);
+                break;
+            case 8:
+                getListNumbersFirst(scInput);
+                break;
+            case 9:
+                getMultiplicationTable(scInput);
+                break;
+
             default:
 
         }
@@ -368,6 +385,25 @@ public class ExosIntro {
             try {
                 System.out.println(prompt);
                 choice = scInput.nextFloat();
+                noValid = false;
+            } catch (Exception e) {
+                scInput.nextLine();
+                System.out.println("Une erreur est survenue !");
+                System.out.println(e.getLocalizedMessage());
+                noValid = true;
+            }
+        }
+        return choice;
+    }
+
+    public static String getStringOfMenu(String prompt, Scanner scInput) {
+        boolean noValid = true;
+        String choice = "";
+
+        while(noValid) {
+            try {
+                System.out.println(prompt);
+                choice = scInput.nextLine();
                 noValid = false;
             } catch (Exception e) {
                 scInput.nextLine();
@@ -414,4 +450,54 @@ public class ExosIntro {
         int lig = getIntOfMenu("Combien de lignes aura le rectangle ?", scInput);
         System.out.println(showRectangle(col, lig));
     }
+
+    public static void getPalindrome(Scanner scInput) {
+        System.out.println("Vous souhaitez savoir si la chaine est un palindrome");
+        String chaine = getStringOfMenu("Quelle chaine voulez-vous tester ?", scInput);
+        if (isPalindrome(chaine)) {
+            System.out.println("La chaine " + chaine + " est un palidrome.");
+        } else {
+            System.out.println("La chaine " + chaine + " n'est pas un palindrome.");
+        }
+    }
+
+    public static void getNumberFirst(Scanner scInput) {
+        System.out.println("Vous souhaitez savoir si le nombre est premier");
+        int number = getIntOfMenu("Quelle nombre voulez-vous tester ?", scInput);
+        if (isNumberFirst(number)) {
+            System.out.println("Le nombre " + number + " est un nombre premier.");
+        } else {
+            System.out.println("La nombre " + number + " n'est pas un nombre premier.");
+        }
+    }
+
+    public static void getListNumbersFirst(Scanner scInput) {
+        System.out.println("Vous souhaitez afficher la liste des nombres premiers");
+        int number = getIntOfMenu("Quel sera le plus grand nombre ?", scInput);
+
+        int[] numsFirst = getListNumFirst(number);
+        if (numsFirst.length > 0) {
+            System.out.println("Les nombres premiers inférieurs à " + number + " sont : ");
+
+            System.out.print("\t");
+            for (int n : numsFirst) {
+                if (n > 2) {
+                    System.out.print(n + ", ");
+                } else if (n == 2) {
+                    System.out.print(n + "\n");
+                }
+            }
+        } else {
+            System.out.println("Pas de nombres premiers inférieurs à " + number);
+        }
+    }
+
+    public static void getMultiplicationTable(Scanner scInput) {
+        System.out.println("Vous souhaitez afficher une table de multiplication");
+        int col = getIntOfMenu("Combien de colonnes aura cette table ?", scInput);
+        int lig = getIntOfMenu("Combien de lignes aura cette table ?", scInput);
+        System.out.println(showMultiplicationTable(col, lig));
+    }
+
+
 }
