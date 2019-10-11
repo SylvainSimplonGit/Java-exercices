@@ -7,7 +7,7 @@ public class ExosDebug {
 //        debugYearLeap();
 //        debugFactorielle();
 //        debugRegle();
-//        debugRectangle();
+        debugRectangle();
 //        debugPalindrome();
 //        debugNombreProduit();
 //        debugArrayMax();

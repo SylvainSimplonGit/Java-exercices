@@ -1,8 +1,13 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class ExosShowing {
     public static void main(String[] args) {
         boolean quit = false;
+
+        Scanner scInput;
+
         String[] arrayChoiceFunction = {
                 "[1] => Calcul de TVA",
                 "[2] => Est-ce que l'année est bissextile ?",
@@ -16,14 +21,33 @@ public class ExosShowing {
                 "[0] => Sortie du programme"
         };
 
-        Scanner scInput = new Scanner(System.in);
+        if (args.length > 0) {
+            boolean noValidFile = true;
+            String nameFile = args[0];
+            do {
+                try (Scanner scFile = new Scanner(new File(nameFile))) {
+                    for (int i = 0; (scFile.hasNextLine() && !quit); ++i) {
+                        int choice = scFile.nextInt();
+                        quit = executeFunctions(choice, scFile);
+                    }
+                    noValidFile = false;
+                    quit = true;
+                } catch (FileNotFoundException e) {
+                    System.out.println("Une erreur est survenue !\n" + e.getLocalizedMessage());
+                    scInput = new Scanner(System.in);
+                    nameFile = getStringOfMenu("Veuillez entrer un nom de fichier qui existe :", scInput);
+                    noValidFile = true;
+                }
+            } while (noValidFile);
 
-        while (!quit) {
+        } else {
+            while (!quit) {
 //            clearConsole();
-            int choice = getChoiceMenu(arrayChoiceFunction, scInput);
-            quit = executeFunctions(choice, scInput);
+                scInput = new Scanner(System.in);
+                int choice = getChoiceMenu(arrayChoiceFunction, scInput);
+                quit = executeFunctions(choice, scInput);
+            }
         }
-
         System.out.println("Sortie du programme normale...");
     }
 
@@ -98,7 +122,7 @@ public class ExosShowing {
         boolean noValid = true;
         int choice = 0;
 
-        while(noValid) {
+        while (noValid) {
             try {
                 System.out.println(prompt);
                 choice = scInput.nextInt();
@@ -117,7 +141,7 @@ public class ExosShowing {
         boolean noValid = true;
         long choice = 0;
 
-        while(noValid) {
+        while (noValid) {
             try {
                 System.out.println(prompt);
                 choice = scInput.nextLong();
@@ -136,7 +160,7 @@ public class ExosShowing {
         boolean noValid = true;
         float choice = 0;
 
-        while(noValid) {
+        while (noValid) {
             try {
                 System.out.println(prompt);
                 choice = scInput.nextFloat();
@@ -155,7 +179,7 @@ public class ExosShowing {
         boolean noValid = true;
         String choice = "";
 
-        while(noValid) {
+        while (noValid) {
             try {
                 System.out.println(prompt);
                 choice = scInput.nextLine();

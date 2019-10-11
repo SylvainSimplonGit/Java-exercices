@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class ExosFunctions {
@@ -282,4 +284,5 @@ public class ExosFunctions {
 
         return showTableOfDatas(lig, col, lengthValueMaxOfArrayOfArray, arrayOfMultiplicationTable);
     }
+
 }
